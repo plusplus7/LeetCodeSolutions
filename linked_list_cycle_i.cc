@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    ListNode *detectCycle(ListNode *head) {
+    bool hasCycle(ListNode *head) {
         if (head == NULL)
             return false;
         ListNode *fast = head;
