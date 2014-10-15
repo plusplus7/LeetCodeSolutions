@@ -79,6 +79,27 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 
 用Trie树来加速查找x的过程，不过我写得有点搓...感觉也没快多少...
 
+### [Word Break][14]
+
+动态规划＋Trie树，和[LA 3942 Remember the Word][LA 3942 Remember the Word]一样差不多，但是此题只需要求dp[0]是否不为0即可
+
+解法同上
+
+### [Copy List with Random Pointer][15]
+
+单链表的深拷贝
+
+空间复杂度O(n)的方法很容易想到，我用的是O(1)的方法
+
+分三步，先把链表的每一个结点复制一个，插入到该结点的后面，复制结点的random指针先设为NULL
+然后，遍历单链表，把根据原始结点的random指针来设置复制结点的random指针；因为每个原始结点的下一个就是该结点的复制结点，所以复制结点的random指针应该指向其原始结点的random指针所指向的结点的next指针所指向的结点
+
+```
+    new->random = raw->random->next;
+```
+
+最后，把原始元素和复制元素分开形成两个单链表，复制元素形成的单链表就是深拷贝的结果
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -92,6 +113,8 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 [11]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/linked_list_cycle_ii.cc
 [12]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/linked_list_cycle_i.cc
 [13]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_break_ii.cc
+[14]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_break_i.cc
+[15]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/copy_list_with_random_pointer.cc
 
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
 [LA 3942 Remember the Word]: http://blog.csdn.net/sssogs/article/details/8789386
