@@ -70,6 +70,15 @@ LRU调度算法，实现一个基于LRU算法的Cache
 
 单链表判环，用快慢指针即可。
 
+### [Word Break II][13]
+
+动态规划＋Trie树，和[LA 3942 Remember the Word][LA 3942 Remember the Word]一样差不多，只不过此题还要求所有的方案。
+
+dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
+那么有动态转移方程：dp[i] = sum{ dp[i+len(x) | x 为字典中的字符串，并且x是i后缀的前缀] }
+
+用Trie树来加速查找x的过程，不过我写得有点搓...感觉也没快多少...
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -82,5 +91,7 @@ LRU调度算法，实现一个基于LRU算法的Cache
 [10]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reorder_list.cc
 [11]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/linked_list_cycle_ii.cc
 [12]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/linked_list_cycle_i.cc
+[13]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_break_ii.cc
 
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
+[LA 3942 Remember the Word]: http://blog.csdn.net/sssogs/article/details/8789386
