@@ -100,6 +100,20 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 
 最后，把原始元素和复制元素分开形成两个单链表，复制元素形成的单链表就是深拷贝的结果
 
+### [Single Number II][16]
+
+水题，给一个数组，查找出现次数少于三次的元素
+
+统计一下每一位1的个数，因为只有一个元素出现少于三次，所以每一位1的个数模3就能知道该元素的那一位是否为1
+
+这题好像是某个ACM比赛的签到题
+
+### [Single Number I][17]
+
+水题，给一个数组，查找出现次数少于两次的元素
+
+答案是所有元素的异或和
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -115,6 +129,8 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 [13]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_break_ii.cc
 [14]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_break_i.cc
 [15]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/copy_list_with_random_pointer.cc
+[16]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/single_number_ii.cc
+[17]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/single_number_i.cc
 
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
 [LA 3942 Remember the Word]: http://blog.csdn.net/sssogs/article/details/8789386
