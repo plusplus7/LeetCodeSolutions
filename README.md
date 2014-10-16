@@ -1,5 +1,13 @@
 # My Solutions to LeetCode
 
+### [Find Minimum in Rotated Sorted Array][-1]
+
+二分，寻找轮换排序数组的最小元素
+
+O(logn)的算法是对数组进行二分，如果中间值大于左值，则说明答案在[mid+1,r]；反之，则答案在[l,mid]
+
+注意特殊处理只有一个元素的情况
+
 ### [Maximum Product Subarray][1]
 
 一维递推，空间复杂度可以优化为O(1)
@@ -114,6 +122,18 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 
 答案是所有元素的异或和
 
+### [Candy][18]
+
+给定一数列，求一新数列，满足某元素在原数列中大于相邻元素，在新数列中也大于相邻元素，求新数列和最少是多少，新数列最小值是1
+
+从左往右扫一遍，使原本是递增的区间在新数列中也递增；从右往左扫一遍，使递减的也递减
+
+### [Gas Station][19]
+
+给定一个环，给出环上路径的距离和汽油量。求从某点出发，能遍历所有结点，而在遍历的每一时刻，汽油量不为负。
+
+把线路扩展成一个环，从起点出发开始遍历。当走到某点，发现汽油量为负，则能判定，在该点之前的所有点都不能为起点。
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -131,6 +151,9 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 [15]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/copy_list_with_random_pointer.cc
 [16]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/single_number_ii.cc
 [17]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/single_number_i.cc
+[18]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/candy.cc
+[19]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/gas_station.cc
+[-1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/find_minimum_in_rotated_sorted_array.cc
 
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
 [LA 3942 Remember the Word]: http://blog.csdn.net/sssogs/article/details/8789386
