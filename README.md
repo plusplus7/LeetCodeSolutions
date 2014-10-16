@@ -134,6 +134,16 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 
 把线路扩展成一个环，从起点出发开始遍历。当走到某点，发现汽油量为负，则能判定，在该点之前的所有点都不能为起点。
 
+### [Clone Graph][20]
+
+深拷贝一个无向图，有环
+
+有空间复杂度为O(1)的解法，就和之前的单链表深拷贝一样，把新复制的结点加到原结点的边的最后面，然后遍历原结点的边，把所有原结点的边连着的结点的新复制结点和之前的新复制的结点连接起来，最后再pop掉原结点的边中最后面的元素，就ok
+
+我用的是一个O(n)的解法，那就是直接DFS，用map记录所有遇到过的结点，把label作为key，新复制的结点作为value存起来。DFS时，如果遇到访问过的结点，就直接返回map中的value，否则新建结点，然后遍历所有边，递归地为新建结点建立边的关系
+
+我之前写了一个[O(1)版本][WA_CLONE_GRAPH]不知道为什么会Wrong Answer，我在本机测试发现结果是正确的。看了下discuss，发现有人和我在同一组case遇到同样的问题
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -154,6 +164,8 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 [18]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/candy.cc
 [19]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/gas_station.cc
 [-1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/find_minimum_in_rotated_sorted_array.cc
+[20]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/clone_graph.cc
 
+[WA_CLONE_GRAPH]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/wa_clone_graph.cc
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
 [LA 3942 Remember the Word]: http://blog.csdn.net/sssogs/article/details/8789386
