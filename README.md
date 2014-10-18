@@ -144,6 +144,50 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 
 我之前写了一个[O(1)版本][WA_CLONE_GRAPH]不知道为什么会Wrong Answer，我在本机测试发现结果是正确的。看了下discuss，发现有人和我在同一组case遇到同样的问题
 
+### [Palindrome Partitioning II][21]
+
+将字符串分割为一个个回文串，求最少分多少次
+
+可以先用O(n^2)的预处理，得到is_pal[i][j]表示i到j是否是回文串
+
+再用O(n^2)的dp，求出dp[i]表示包含第i个字符能分割字符串的最小分割数
+
+答案就是dp[n-1]
+
+### [Palindrome Partitioning I][22]
+
+将字符串分割为一个个回文串，求所有分法
+
+可以先用O(n^2)的预处理，得到is_pal[i][j]表示i到j是否是回文串
+
+然后DFS一下，就行了
+
+### [Surrounded Regions][23]
+
+把图中所有被X包围的O置为X，求最终图
+
+从图四个边上所有的O开始DFS，所有遍历到的O在最终图中都不是X
+
+处理完了之后，把所有没有遍历到的O置为X即可
+
+### [Sum Root to Leaf Numbers][24]
+
+DFS，求所有根到叶子结点所产生数之和
+
+### [Longest Consecutive Sequence][25]
+
+用给定数组组成一条最长连续数列，求长度为多少
+
+要求使用O(n)的算法
+
+照着O(n)的尿性，就知道应该使用hash
+
+把所有数字放到一个 set (unordered_set) 中，然后遍历set中的元素
+
+因为unordered_set使用的是hash，所以可以根据当前元素在平均O(1)的时间复杂度下知道是否存在相邻元素
+
+把所有相邻元素都找一次，然后记录最长能达到多少，再把所有找过的元素从set中删掉就ok
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -165,6 +209,11 @@ dp[i]表示以第i个字符开始的后缀字符串有多少种拼接方案
 [19]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/gas_station.cc
 [-1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/find_minimum_in_rotated_sorted_array.cc
 [20]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/clone_graph.cc
+[21]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/palindrome_partitioning_ii.cc
+[22]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/palindrome_partitioning_i.cc
+[23]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/surrounded_regions.cc
+[24]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/sum_root_to_leaf_numbers.cc
+[25]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/longest_consecutive_sequence.cc
 
 [WA_CLONE_GRAPH]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/wa_clone_graph.cc
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
