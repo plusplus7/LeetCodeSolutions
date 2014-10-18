@@ -1,5 +1,7 @@
 # My Solutions to LeetCode
 
+当前进度：26/153
+
 ### [Find Minimum in Rotated Sorted Array][-1]
 
 二分，寻找轮换排序数组的最小元素
