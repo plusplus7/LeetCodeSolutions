@@ -190,6 +190,122 @@ DFS，求所有根到叶子结点所产生数之和
 
 把所有相邻元素都找一次，然后记录最长能达到多少，再把所有找过的元素从set中删掉就ok
 
+### [Word Ladder II][26]
+
+搜索题，从某个单词转换到另一个单词的条件是两个单词最多只有1个字符不同。给出一个字典，从起始单词最少转换几次到目标单词，求所有最少转换的路径
+
+先BFS按层数搜索，搜到目标单词那一层时，停止。纪录所有单词的前驱单词。
+
+根据记录单词的前驱单词，从目标单词开始反向DFS，同时记录答案即可
+
+### [Word Ladder][27]
+
+搜索题，从某个单词转换到另一个单词的条件是两个单词最多只有1个字符不同。给出一个字典，求从起始单词最少转换几次到目标单词
+
+BFS一下就好了
+
+### [Valid Palindrome][28]
+
+除掉特殊字符外的字符串，判断是否是回文串
+
+扫一遍就好了
+
+### [Binary Tree Maximum Path Sum][29]
+
+树形动态规划，求二叉树上两节点之间路径和
+
+其实只是有点树形dp的味道。DFS一下，dp[i]表示以节点i为终点，以节点i的某个儿子节点为起点的最大路径和，dp[i] = max(dp[i->right]+val[i], dp[i->left]+val[i])
+
+实际在求的时候，可以利用递归把dp数组省掉，答案ans = max(dp[i->left]+dp[i->right]+val[i], dp[i->left]+val[i], dp[i->right]+val[i])
+
+### [Best Time to Buy and Sell Stock III][30]
+
+动态规划，给出某股票的n日的价格，能买进卖出最多两次，求最多能赚多少
+
+dp_left[i]表示从0到i，买卖1次最多能赚多少
+dp_right[i]表示从i到n，买卖1次最多能赚多少
+
+答案就是dp_left[i-1]+dp_right[i]
+
+### [Best Time to Buy and Sell Stock II][31]
+
+贪心，扫一遍，求出所有峰值和谷值，把差累加起来就好
+
+需要注意判断谷值时的，>=和<的符号使用问题
+
+### [Best Time to Buy and Sell Stock I][32]
+
+简单题，扫一遍，求出最大和最小，答案是差值
+
+### [Triangle][33]
+
+动态规划入门题
+
+dp[i][j] = min(dp[i-1][j]+val[i][j], dp[i-1][j-1]+val[i][j])
+
+### [Pascal's Triangle II][34]
+
+数论，求杨辉三角的第k行
+
+利用递推求组合数的公式可以直接算出答案
+
+公式的推导见《算法竞赛入门经典》第183页
+
+### [Pascal's Triangle][35]
+
+数论，求杨辉三角的第k行
+
+利用递推求组合数的公式可以直接算出答案
+
+公式的推导见《算法竞赛入门经典》第183页
+
+### [Populating Next Right Pointers in Each Node II][36]
+
+指针处理，把任意二叉树上节点和右边离它最近的节点连接起来
+
+从最高层往下处理，每层的儿子可以借助其父亲的next节点找到右边离它最近的节点
+
+递归往下即可
+
+### [Populating Next Right Pointers in Each Node][37]
+
+指针处理，把完全二叉树上节点和右边离它最近的节点连接起来
+
+从最高层往下处理，每层的右儿子的next指向其父亲的next的left节点
+
+递归往下即可
+
+### [Distinct Subsequences][38]
+
+动态规划，求S的子序列中有多少是T
+
+dp[i][j]表示S[0...i]的子序列有多少是T[0...j]
+
+那么dp[i][j] = dp[i-1][j]+dp[i-1][j-1], 当S[i] == T[j]
+    dp[i][j] = dp[i-1][j]               当S[i] != T[j]
+
+### [Flatten Binary Tree to Linked List][39]
+
+指针处理，把二叉树变成单链表
+
+flatten把每棵子树变成链，递归一下
+
+当左儿子存在时，把左边最下面的节点找到，把它和右儿子接起来就ok
+
+### [Path Sum II][40]
+
+搜索，DFS一下，记录路径就好了
+
+### [Path Sum I][41]
+
+搜索，DFS一下，判断一下就好了
+
+### [Minimum Depth of Binary Tree][42]
+
+搜索，DFS一下，记录最小值就好了
+
+
+
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
 [3]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/evaluate_reverse_polish_notation.cc
@@ -216,6 +332,25 @@ DFS，求所有根到叶子结点所产生数之和
 [23]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/surrounded_regions.cc
 [24]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/sum_root_to_leaf_numbers.cc
 [25]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/longest_consecutive_sequence.cc
+[26]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_ladder_ii.cc
+[27]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/word_ladder_i.cc
+[28]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/valid_palindrome.cc
+[29]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/binary_tree_maximum_path_sum.cc
+[30]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/best_time_to_buy_and_sell_stock_iii.cc
+[31]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/best_time_to_buy_and_sell_stock_ii.cc
+[32]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/best_time_to_buy_and_sell_stock_i.cc
+[33]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/triangle.cc
+[34]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's triangle_ii.cc
+[35]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's triangle_i.cc
+[36]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/populating_next_right_pointers_in_each_node_ii.cc
+[37]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/populating_next_right_pointers_in_each_node_i.cc
+[38]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/distinct_subsequences.cc
+[39]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/flatten_binary_tree_to_linked_list.cc
+[40]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/path_sum_ii.cc
+[41]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/path_sum_i.cc
+[42]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/minimum_depth_of_binary_tree.cc
+
+
 
 [WA_CLONE_GRAPH]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/wa_clone_graph.cc
 [WEIBO_BIAAIB]: http://weibo.com/biaaib
