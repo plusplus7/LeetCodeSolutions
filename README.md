@@ -340,8 +340,8 @@ flatten把每棵子树变成链，递归一下
 [31]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/best_time_to_buy_and_sell_stock_ii.cc
 [32]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/best_time_to_buy_and_sell_stock_i.cc
 [33]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/triangle.cc
-[34]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's triangle_ii.cc
-[35]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's triangle_i.cc
+[34]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's_triangle_ii.cc
+[35]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/pascal's_triangle_i.cc
 [36]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/populating_next_right_pointers_in_each_node_ii.cc
 [37]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/populating_next_right_pointers_in_each_node_i.cc
 [38]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/distinct_subsequences.cc
