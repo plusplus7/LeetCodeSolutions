@@ -2,6 +2,14 @@
 
 当前进度：55/153
 
+### [Find Minimum in Rotated Sorted Array II][-2]
+
+二分，寻找轮换排序数组的最小元素，可能有相同元素
+
+还是对数组进行二分，当左值等于右值时，可以把二分的范围两边同时减1
+
+这样做的话，算法时间复杂度是O(n)，不过OJ还是会给Accepted...
+
 ### [Find Minimum in Rotated Sorted Array][-1]
 
 二分，寻找轮换排序数组的最小元素
@@ -304,7 +312,77 @@ flatten把每棵子树变成链，递归一下
 
 搜索，DFS一下，记录最小值就好了
 
+### [Balanced Binary Tree][43]
 
+递归，判断某二叉树是否平衡
+
+纪录左子树和右子树的高度，比较差值
+
+递归往下即可
+
+### [Convert Sorted List to Binary Search Tree][44]
+
+递归，把有序链表转化为二叉树
+
+类似于中序遍历，从左子树开始建树
+
+增加l和r记录递归的范围，便于控制
+
+### [Convert Sorted Array to Binary Search Tree][45]
+
+递归，把有序数组转化为二叉树
+
+类似于中序遍历，从左子树开始建树
+
+增加l和r记录递归的范围，便于控制
+
+### [Binary Tree Level Order Traversal II][46]
+
+二叉树的层次遍历，按层数倒序输出
+
+DFS的时候，记录层数，把值放到相应的vector中，利用reverse函数可以直接反转vector
+
+### [Construct Binary Tree from Inorder and Postorder Traversal][47]
+
+根据中根序和后根序重建二叉树
+
+递归的进行，对两个数组都增加l和r值，便于操作，先建左子树再建右子树
+
+### [Construct Binary Tree from Preorder and Inorder Traversal][48]
+
+根据中根序和先根序重建二叉树
+
+递归的进行，对两个数组都增加l和r值，便于操作，先建左子树再建右子树
+
+### [Maximum Depth of Binary Tree][49]
+
+求二叉树最大层数
+
+DFS一下，记录层数就好
+
+### [Binary Tree Zigzag Level Order Traversal][50]
+
+二叉树的层次遍历，把每隔一层的元素反转后输出
+
+DFS的时候，记录层数，把值放到相应的vector中，利用reverse函数可以直接反转奇数层的vector
+
+### [Binary Tree Level Order Traversal][51]
+
+二叉树的层次遍历，把每隔一层的元素反转后输出
+
+DFS的时候，记录层数，把值放到相应的vector中
+
+### [Symmetric Tree][52]
+
+判断二叉树是否对称
+
+从root的左右儿子分开，一起往下递归即可
+
+### [Same Tree][53]
+
+判断二叉树是否相同
+
+一起从root开始往下递归即可
 
 [1]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_product_subarray.cc
 [2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/reverse_words_in_a_string.cc
@@ -349,7 +427,18 @@ flatten把每棵子树变成链，递归一下
 [40]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/path_sum_ii.cc
 [41]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/path_sum_i.cc
 [42]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/minimum_depth_of_binary_tree.cc
-
+[-2]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/find_minimum_in_rotated_sorted_array_ii.cc
+[43]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/balaced_binary_tree.cc
+[44]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/convert_sorted_list_to_binary_search_tree.cc
+[45]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/convert_sorted_array_to_binary_search_tree.cc
+[46]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/binary_tree_level_order_traversal_ii.cc
+[47]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/construct_binary_tree_from_inorder_and_postorder_traversal.cc
+[48]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/construct_binary_tree_from_preorder_and_inorder_traversal.cc
+[49]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/maximum_depth_of_binary_tree.cc
+[50]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/binary_tree_zigzag_level_order_traversal.cc
+[51]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/binary_tree_level_order_traversal.cc
+[52]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/symmetric_tree.cc
+[53]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/same_tree.cc
 
 
 [WA_CLONE_GRAPH]: https://github.com/plusplus7/LeetCodeSolutions/blob/master/src/wa_clone_graph.cc
